@@ -1,0 +1,21 @@
+.equipo{
+    border: none; 
+
+}
+
+.equipo h3{ 
+    width: 432px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px; 
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 40px;
+}
+
+.containerVideo{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}

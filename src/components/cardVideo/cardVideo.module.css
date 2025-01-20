@@ -1,0 +1,106 @@
+
+.container{
+    border-radius: 10px;
+    box-shadow: 
+    inset  0 0 10px , /* Efecto de brillo */
+    inset  0 0 10px , 
+          0 0 25px ;
+    transition: all 0.3s ease-in-out;
+    border: solid;
+    margin-bottom: 20px;
+}
+.card {
+    width: 430px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    box-shadow: 
+    inset 0 0 5px, /* Efecto de brillo */
+    inset  0 0 10px , 
+    0 0 20px ;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid;
+  }
+  
+  .imagen {
+    width:100%;
+    position: relative;
+  }
+  
+  .videoImagen {
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .videoContainer {
+    display: none; /* Podrías mostrarlo dinámicamente según el estado */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    
+  }
+
+  .card h3{
+  font-size: 0.7rem;
+}
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+  }
+  
+  .cardBotones {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding:  10px 0 10px 0;
+    border-radius: 15px;
+    background-color: #000000;
+  }
+  
+  .botonBorrar,
+  .botonEditar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background-color: #000000;
+  }
+
+
+  .tituloContainer {
+    position: absolute;
+    top: 10px; /* Posiciona el título cerca de la parte superior de la imagen */
+    left: 20px;
+    z-index: 10; /* Asegura que el título esté por encima de la imagen */
+}
+.titulo {
+    color: white; /* Color del texto del título */
+    font-size: 24px; /* Tamaño del título */
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro para el texto */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+  .botonBorrar:hover {
+    background-color: #c05353;
+  }
+  
+  
+  .botonEditar:hover {
+    background-color: #45a467;
+  }
+  

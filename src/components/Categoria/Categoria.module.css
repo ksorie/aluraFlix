@@ -1,0 +1,14 @@
+.categoria{
+        width: 500px;
+        padding: 15px;
+        font-size: 1rem;
+        border: 2px solid #444;
+        border-radius: 10px;
+        background-color: #262626;
+        color: #ffffff;
+        display: flex;
+        text-align: start;
+        margin: 20px 0;  
+        font-family: "Source Code Pro";
+
+}
