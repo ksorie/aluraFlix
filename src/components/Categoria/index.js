@@ -3,6 +3,8 @@ import styles from "./Categoria.module.css"
 
 const Categoria = (props) => {
 
+    
+
     const manejarCambio = (e) => {
         props.actualizarCategoria(e.target.value);
     };

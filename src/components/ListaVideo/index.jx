@@ -1,0 +1,47 @@
+import React, { useState } from "react";
+import CardVideo from "./CardVideo";
+import ModalEditar from "./ModalEditar";
+
+function ListaVideos({ videos, eliminarVideo, actualizarVideo, colorPrimario }) {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [videoSeleccionado, setVideoSeleccionado] = useState(null);
+
+  const abrirModal = (video) => {
+    setVideoSeleccionado(video);
+    setModalOpen(true);
+  };
+
+  const cerrarModal = () => {
+    setModalOpen(false);
+    setVideoSeleccionado(null);
+  };
+
+  const guardarCambios = (datosEditados) => {
+    actualizarVideo(videoSeleccionado.id, datosEditados);
+    cerrarModal();
+  };
+
+  return (
+    <div>
+      {videos.map((video) => (
+        <CardVideo
+          key={video.id}
+          datos={video}
+          colorPrimario={colorPrimario}
+          eliminarVideo={eliminarVideo}
+          onEdit={abrirModal} // Pasa la función de abrir el modal
+        />
+      ))}
+
+      {/* Modal para editar */}
+      <ModalEditar
+        datos={videoSeleccionado || {}} // Datos del video seleccionado
+        isOpen={modalOpen}
+        onClose={cerrarModal}
+        onSave={guardarCambios}
+      />
+    </div>
+  );
+}
+
+export default ListaVideos;

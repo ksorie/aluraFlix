@@ -10,6 +10,7 @@ function Formulario(props) {
     const [video, actualizarVideo] = useState("");
     const [descripcion, actualizarDescripcion] = useState("");
     const [categoria, actualizarCategoria] = useState("");
+    const [mensajeConfirmacion, setMensajeConfirmacion] = useState(""); // Estado para el mensaje de confirmación
     const {registrarVideo} =props
 
     // Lista de categorías (puede moverse a un archivo de configuración si se usa en varios lugares)
@@ -36,11 +37,22 @@ function Formulario(props) {
         }
         registrarVideo(datosAEnviar);
         limpiarCampos(); 
+
+        // Mostrar mensaje de confirmación
+        setMensajeConfirmacion("El video se ha agregado correctamente.");
+
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            setMensajeConfirmacion("");
+        }, 3000);
     }
 
     return (
         <section className={styles.formulario}>
             <h3>Crear Tarjeta</h3>
+            {mensajeConfirmacion && (
+                <p className={styles.mensajeConfirmacion}>{mensajeConfirmacion}</p>
+            )}
             <form onSubmit={manejarEnvio}>
                 <div>
                     <Campo
